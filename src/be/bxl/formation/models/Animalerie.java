@@ -80,7 +80,7 @@ public class Animalerie {
     }
 
     public void retirerAnimal(Animal animal) {
-        if(animal == null || !animal.isVivant())
+        if(animal == null)
             throw new IllegalArgumentException("Parametre Animal non valide!");
 
 
@@ -112,28 +112,28 @@ public class Animalerie {
     public String simulationJournee() {
         StringBuilder resume = new StringBuilder();
 
-        resume.append(" - Journée ");
+        resume.append(" - Journée \n");
         for (Animal a: this.animaux) {
             a.debuterJour();
 
             if(a instanceof Chat c && !c.isGriffeCoupe()) {
-                resume.append(c.getNom()).append(" a griffé le veto !");
+                resume.append(c.getNom()).append(" a griffé le veto !\n");
                 c.couperGriffe();
             }
 
             if(a instanceof Oiseau o) {
-                resume.append(o.getNom()).append(" fait ").append(o.crier());
+                resume.append(o.getNom()).append(" fait ").append(o.crier()).append("\n");
             }
         }
         resume.append("\n");
 
-        resume.append(" - Nuit ");
+        resume.append(" - Nuit \n");
         boolean deces = false;
         for (Animal a : this.animaux) {
             a.debuterNuit();
 
             if(a.isVivant() && a instanceof  Chien c) {
-                resume.append(c.getNom()).append(" fait ").append(c.crier());
+                resume.append(c.getNom()).append(" fait ").append(c.crier()).append("\n");
             }
 
             if(!a.isVivant()) {
@@ -142,7 +142,7 @@ public class Animalerie {
         }
 
         if(deces) {
-            resume.append("Le veto constate le décés d'un animal");
+            resume.append("Le veto constate le décés d'un animal \n");
             retirerAnimauxdecede();
         }
 
