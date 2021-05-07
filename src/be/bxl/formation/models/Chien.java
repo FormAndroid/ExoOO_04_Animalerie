@@ -61,5 +61,18 @@ public class Chien extends Animal {
     public String crier() {
         return "Whoof";
     }
+
+    @Override
+    public String sePresenter() {
+
+        String desc = "[Chien] " + super.sePresenter() + String.format(", de race \"%s\"", getRace());
+
+        if(isDresse()) {
+            desc += " et il est dréssé";
+        }
+
+        return desc;
+    }
+
     //endregion
 }

@@ -83,5 +83,12 @@ public class Chat extends Animal {
         super.debuterJour();
         fairePousserGriffe();
     }
+
+    @Override
+    public String sePresenter() {
+        String typePoil = (getPoil() == LongeurPoil.COURT) ? "à poil cout" : "à poil long";
+
+        return "[Chat] " + super.sePresenter() + String.format(", %s, %s", getCaractere(), typePoil);
+    }
     //endregion
 }
