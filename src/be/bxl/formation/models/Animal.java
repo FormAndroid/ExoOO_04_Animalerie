@@ -78,12 +78,12 @@ public abstract class Animal {
 
     //region Constructeur
     public Animal(String nom, double poids, double taille, Sexe sexe, int age, LocalDate dateArrive) {
-        this.nom = nom;
-        this.poids = poids;
-        this.taille = taille;
-        this.sexe = sexe;
-        this.age = age;
-        this.dateArrive = dateArrive;
+        this.setNom(nom);
+        this.setPoids(poids);
+        this.setTaille(taille);
+        this.setSexe(sexe);
+        this.setAge(age);
+        this.setDateArrive(dateArrive);
         this.vivant = true;
     }
     //endregion
