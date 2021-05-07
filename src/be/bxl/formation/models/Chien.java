@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 public class Chien extends Animal {
 
-    private double PROBA_DECES = 1;
+    private final double PROBA_DECES = 1;
 
     //region Champs
     private String race;

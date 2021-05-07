@@ -7,9 +7,9 @@ import java.time.LocalDate;
 
 public class Chat extends Animal {
 
-    private double PROBA_DECES = 0.5;
-    private int GRIFFE_MIN = 0;
-    private int GRIFFE_MAX = 5;
+    private final double PROBA_DECES = 0.5;
+    private final int GRIFFE_MIN = 0;
+    private final int GRIFFE_MAX = 5;
 
     //region Champs
     private String caractere;
